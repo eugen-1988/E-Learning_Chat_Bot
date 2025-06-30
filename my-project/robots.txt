@@ -1,3 +1,9 @@
+
 User-agent: *
+
+Disallow: /login
+Disallow: /register
+
 Allow: /
+
 Sitemap: https://chatbot-startcoding.vercel.app/sitemap.xml
