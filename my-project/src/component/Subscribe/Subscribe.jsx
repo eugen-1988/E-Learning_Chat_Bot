@@ -3,13 +3,6 @@ import { FaBell } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { IoCheckmarkCircleOutline } from "react-icons/io5";
 
-//const bgStyle = {
-// backgroundImage: url(${BgImage}),
-// backgroundRepeat: "no-repeat",
-// backgroundSize: "cover",
-// backgroundPosition: "center",
-//};
-
 const Subscribe = ({ onOpenModal }) => {
   return (
     <section className="bg-[#f7f7f7]">
