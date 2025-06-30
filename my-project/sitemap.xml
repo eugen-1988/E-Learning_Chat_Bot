@@ -3,36 +3,42 @@
   <!-- Homepage -->
   <url>
     <loc>https://chatbot-startcoding.vercel.app/</loc>
+    <lastmod>2025-06-30</lastmod>
     <priority>1.0</priority>
   </url>
 
   <!-- Pagina Kurse -->
   <url>
     <loc>https://chatbot-startcoding.vercel.app/kurse</loc>
+    <lastmod>2025-06-30</lastmod>
     <priority>0.9</priority>
   </url>
 
-  <!-- Exemplu: curs detaliu (ar trebui generate dinamic dacă ai mai multe) -->
+  <!-- Exemplu pagină de detaliu curs -->
   <url>
     <loc>https://chatbot-startcoding.vercel.app/kurse/react-grundlagen</loc>
+    <lastmod>2025-06-30</lastmod>
     <priority>0.8</priority>
   </url>
 
   <!-- Kontakt -->
   <url>
     <loc>https://chatbot-startcoding.vercel.app/kontakt</loc>
+    <lastmod>2025-06-30</lastmod>
     <priority>0.6</priority>
   </url>
 
   <!-- Über Uns -->
   <url>
     <loc>https://chatbot-startcoding.vercel.app/ueber-uns</loc>
+    <lastmod>2025-06-30</lastmod>
     <priority>0.6</priority>
   </url>
 
   <!-- Unser Team -->
   <url>
     <loc>https://chatbot-startcoding.vercel.app/unser-team</loc>
+    <lastmod>2025-06-30</lastmod>
     <priority>0.6</priority>
   </url>
 </urlset>
