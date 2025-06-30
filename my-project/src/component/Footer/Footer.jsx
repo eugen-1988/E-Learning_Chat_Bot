@@ -1,13 +1,12 @@
 import { motion } from "framer-motion";
-import { FaInstagram, FaDiscord, FaYoutube } from "react-icons/fa";
+import { FaInstagram, FaDiscord, FaYoutube, FaPhone } from "react-icons/fa";
 import { TbWorldWww } from "react-icons/tb";
-import { FaPhone } from "react-icons/fa";
 import { assets } from "../../assets";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="py-6 bg-[#f7f7f7]">
+    <footer role="contentinfo" className="py-6 bg-[#f7f7f7]">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -16,7 +15,6 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14 md:gap-4">
           {/*-----First section------*/}
           <div className="space-y-4 max-w-[300px]">
-            {/*---Logo section---*/}
             <div>
               <Link
                 to="/"
@@ -26,7 +24,7 @@ const Footer = () => {
               >
                 <img
                   src={assets.logo_tech}
-                  alt="Logo"
+                  alt="SCC Logo – Zur Startseite"
                   className="h-20 mx-auto"
                 />
               </Link>
@@ -41,30 +39,36 @@ const Footer = () => {
               meisterst.
             </p>
           </div>
+
           {/*-----Second section------*/}
           <div className="grid grid-cols-2 gap-10">
             <div className="space-y-4">
-              <h1 className="text-xl font-bold">Hier finden Sie uns</h1>
+              <h2 className="text-xl font-bold">Hier finden Sie uns</h2>
               <div className="text-dark2">
                 <ul className="space-y-2 text-lg">
-                  <li className=" hover:text-secondary duration-200 font-semibold">
+                  <li className="hover:text-secondary duration-200 font-semibold">
                     Adresse:
                   </li>
-                  <li className=" hover:text-secondary duration-200">
+                  <li className="hover:text-secondary duration-200">
                     Lange-Feld-Straße 109
                   </li>
-                  <li className=" hover:text-secondary duration-200">
+                  <li className="hover:text-secondary duration-200">
                     30926 Seelze
                   </li>
                   <li className="flex items-center gap-2 hover:text-secondary duration-200">
                     <FaPhone className="text-base" />
-                    +49 123 4567890
+                    <a
+                      href="tel:+491234567890"
+                      aria-label="Telefonnummer anrufen"
+                    >
+                      +49 123 4567890
+                    </a>
                   </li>
                 </ul>
               </div>
             </div>
             <div className="space-y-4">
-              <h1 className="text-xl font-bold">Links</h1>
+              <h2 className="text-xl font-bold">Links</h2>
               <div className="text-dark2">
                 <ul className="space-y-2 text-lg">
                   <li>
@@ -103,26 +107,39 @@ const Footer = () => {
               </div>
             </div>
           </div>
+
           {/*-----Third section------*/}
           <div className="space-y-4 max-w-[300px]">
-            <h1 className="text-xl font-bold">Newsletter</h1>
+            <h2 id="newsletter-title" className="text-xl font-bold">
+              Newsletter
+            </h2>
 
-            <div className="flex items-center">
+            <form
+              className="flex items-center"
+              aria-labelledby="newsletter-title"
+            >
               <input
-                type="text"
+                type="email"
+                aria-label="E-Mail eingeben"
                 placeholder="E-Mail eingeben"
-                className="p-3 rounded-s-xl bg-white w-full py-4 focus:ring-0 focus:outline-none placeholder:text-dark2 "
+                className="p-3 rounded-s-xl bg-white w-full py-4 focus:ring-0 focus:outline-none placeholder:text-dark2"
               />
-              <button className="bg-primary text-white font-semibold py-4 px-6 rounded-e-xl">
+              <button
+                type="submit"
+                aria-label="Newsletter absenden"
+                className="bg-primary text-white font-semibold py-4 px-6 rounded-e-xl"
+              >
                 Go
               </button>
-            </div>
+            </form>
+
             {/*-----Social Icons------*/}
             <div className="flex space-x-6 py-3">
               <a
                 href="https://www.instagram.com/thecodepost/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Instagram Profil öffnen"
               >
                 <FaInstagram className="cursor-pointer hover:text-primary hover:scale-105 duration-200" />
               </a>
@@ -130,6 +147,7 @@ const Footer = () => {
                 href="https://discord.gg/programming"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Discord Community öffnen"
               >
                 <FaDiscord className="cursor-pointer hover:text-primary hover:scale-105 duration-200" />
               </a>
@@ -137,6 +155,7 @@ const Footer = () => {
                 href="https://www.freecodecamp.org/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Website öffnen"
               >
                 <TbWorldWww className="cursor-pointer hover:text-primary hover:scale-105 duration-200" />
               </a>
@@ -144,6 +163,7 @@ const Footer = () => {
                 href="https://www.youtube.com/c/TraversyMedia"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="YouTube Kanal öffnen"
               >
                 <FaYoutube className="cursor-pointer hover:text-primary hover:scale-105 duration-200" />
               </a>
@@ -157,4 +177,5 @@ const Footer = () => {
     </footer>
   );
 };
+
 export default Footer;

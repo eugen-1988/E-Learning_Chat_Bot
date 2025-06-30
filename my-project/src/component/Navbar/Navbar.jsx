@@ -16,7 +16,7 @@ const Navbar = ({ onOpenModal }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav id="navbar" className="bg-light relative z-50">
+    <nav id="navbar" role="navigation" className="bg-light relative z-50">
       <motion.div
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -45,7 +45,11 @@ const Navbar = ({ onOpenModal }) => {
                 </Link>
               </li>
             ))}
-            <button onClick={onOpenModal} className="primary-btn">
+            <button
+              onClick={onOpenModal}
+              className="primary-btn"
+              aria-label="Anmeldemodal öffnen"
+            >
               Anmelden
             </button>
           </ul>
@@ -53,7 +57,11 @@ const Navbar = ({ onOpenModal }) => {
 
         {/*---Hamburger Icon---*/}
         <div className="lg:hidden">
-          <button onClick={() => setIsMenuOpen(true)}>
+          <button
+            onClick={() => setIsMenuOpen(true)}
+            aria-label="Menü öffnen"
+            aria-expanded={isMenuOpen}
+          >
             <IoMdMenu className="text-4xl text-gray-800" />
           </button>
         </div>
@@ -68,10 +76,16 @@ const Navbar = ({ onOpenModal }) => {
             exit={{ x: "100%" }}
             transition={{ duration: 0.3 }}
             className="fixed top-0 right-0 w-4/5 h-full bg-white shadow-2xl z-50 flex flex-col"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Mobiles Menü"
           >
             <div className="flex justify-between items-center p-4 border-b">
               <span className="text-lg font-semibold">Menü</span>
-              <button onClick={() => setIsMenuOpen(false)}>
+              <button
+                onClick={() => setIsMenuOpen(false)}
+                aria-label="Menü schließen"
+              >
                 <IoMdClose className="text-3xl text-gray-700" />
               </button>
             </div>
@@ -93,6 +107,7 @@ const Navbar = ({ onOpenModal }) => {
                   setIsMenuOpen(false);
                 }}
                 className="m-4 py-3 px-6 bg-secondary text-white rounded-lg hover:bg-primary transition"
+                aria-label="Anmeldemodal öffnen"
               >
                 Anmelden
               </button>
